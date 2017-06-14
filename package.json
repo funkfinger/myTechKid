@@ -1,0 +1,15 @@
+{
+  "name": "mytechkid",
+  "version": "1.0.0",
+  "description": "Humorous Alexa skill that always tells your parents to reboot the device.",
+  "main": "myTechKid.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jay Wiggins",
+  "repository": "https://github.com/funkfinger/myTechKid.git",
+  "license": "Unlicense",
+  "dependencies": {
+    "alexa-sdk": "^1.0.10"
+  }
+}
