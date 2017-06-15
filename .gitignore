@@ -58,10 +58,17 @@ typings/
 .env
 
 
+.DS_Store
+
 
 # node-lambda files:
 deploy.env
 event.json
 .lambda
+
+build
+
+
+
 
 

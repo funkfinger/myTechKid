@@ -4,6 +4,10 @@
   "description": "Humorous Alexa skill that always tells your parents to reboot the device.",
   "main": "index.js",
   "scripts": {
+    "clean": "rm -Rf build",
+    "package": "mkdir -p build;zip -r build/lambda.zip index.js node_modules",
+    "upload": "aws s3 cp build/lambda.zip s3://my-tech-kid-lambda/lambda.zip",
+    "update": "aws lambda update-function-code --function-name myTechKid --s3-bucket my-tech-kid-lambda --s3-key lambda.zip",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jay Wiggins",

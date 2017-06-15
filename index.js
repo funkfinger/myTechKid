@@ -20,7 +20,7 @@ const languageStrings = {
                 'Sometimes a reboot will fix it.'
             ],
             SKILL_NAME: 'Tech Support Kid',
-            GET_SUPPORT_MESSAGE: "Cool, you're not calling your kid. ",
+            GET_SUPPORT_MESSAGE: "Cool. ",
             HELP_MESSAGE: 'Before you call your kids, let me help you with you tech support problem.',
             HELP_REPROMPT: 'Do you need support?',
             STOP_MESSAGE: 'Goodbye!',
