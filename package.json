@@ -2,7 +2,7 @@
   "name": "mytechkid",
   "version": "1.0.0",
   "description": "Humorous Alexa skill that always tells your parents to reboot the device.",
-  "main": "myTechKid.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
