@@ -20,9 +20,13 @@ const languageStrings = {
                 'Sometimes a reboot will fix it.'
             ],
             SKILL_NAME: 'Tech Support Kid',
-            GET_SUPPORT_MESSAGE: "Cool. ",
+            SUPPORT_MESSAGE_INTROS: [
+              "Sure. ",
+              "OK. ",
+              "No problem. "
+            ],
             HELP_MESSAGE: 'Before you call your kids, let me help you with you tech support problem.',
-            HELP_REPROMPT: 'Do you need support?',
+            HELP_REPROMPT: "Do you need support? If so, don't call your kid, ask me.",
             STOP_MESSAGE: 'Goodbye!',
         },
     }
@@ -39,13 +43,17 @@ const handlers = {
         this.emit('GetSupport');
     },
     'GetSupport': function () {
+      const supportIntroArray = this.t('SUPPORT_MESSAGE_INTROS');
+      const supportIntroIndex = Math.floor(Math.random() * supportIntroArray.length);
+      const randomSupportIntro = supportIntroArray[supportIntroIndex];
+      
       const supportArr = this.t('SUPPORTS');
-        const supportIndex = Math.floor(Math.random() * supportArr.length);
-        const randomSupport = supportArr[supportIndex];
+      const supportIndex = Math.floor(Math.random() * supportArr.length);
+      const randomSupport = supportArr[supportIndex];
 
-        // Create speech output
-        const speechOutput = this.t('GET_SUPPORT_MESSAGE') + randomSupport;
-        this.emit(':tellWithCard', speechOutput, this.t('SKILL_NAME'), randomSupport);
+      // Create speech output
+      const speechOutput = randomSupportIntro + randomSupport;
+      this.emit(':tellWithCard', speechOutput, this.t('SKILL_NAME'), randomSupport);
     },
     'AMAZON.HelpIntent': function () {
         const speechOutput = this.t('HELP_MESSAGE');
